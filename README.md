@@ -66,13 +66,4 @@ The goal is to clean the data and make it accurate, reliable, and ready for anal
 3. Review highlighted errors  
 4. Apply corrections based on validation rules  
 
----
 
-## 👤 Author
-**Ayushman Kashyap**  
-Computer Science Student  
-
----
-
-## 📜 License
-This project is created for educational and learning purposes.
