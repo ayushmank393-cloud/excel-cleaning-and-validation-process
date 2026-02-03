@@ -12,10 +12,22 @@ valid_professions = [
     "Healthcare", "Homemaker", "Executive", "Entertainment"
 ]
 
+# Normalize profession column (handle NaN, spaces, case)
+df["Profession"] = (
+    df["Profession"]
+    .astype(str)
+    .str.strip()
+    .str.title()
+)
+
 # Detect invalid professions
 df["Profession_Status"] = df["Profession"].apply(
     lambda x: "Valid" if x in valid_professions else "Invalid"
 )
+
+# Count invalid entries
+invalid_count = (df["Profession_Status"] == "Invalid").sum()
+print(f"Invalid professions found: {invalid_count}")
 
 # Replace invalid values
 df.loc[df["Profession_Status"] == "Invalid", "Profession"] = "Unknown"
